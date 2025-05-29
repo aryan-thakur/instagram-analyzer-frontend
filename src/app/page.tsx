@@ -3,13 +3,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   BarChart3,
   TrendingUp,
-  Users,
+  Lock,
   Eye,
   ArrowRight,
   Zap,
   Shield,
   Clock,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function LandingPage() {
   return (
@@ -25,8 +26,12 @@ export default function LandingPage() {
               InstagramAnalytics
             </span>
           </div>
-          <Button variant="outline" className="hidden sm:flex">
-            Contact
+          {/* 'For Devs' Button */}
+          <Button
+            variant="outline"
+            className="cursor-pointer ml-auto border-2 border-purple-600 text-purple-700 hover:bg-purple-50 hover:border-purple-700 transition px-6 py-2 rounded-full font-semibold shadow-sm text-base"
+          >
+            for devs
           </Button>
         </nav>
       </header>
@@ -52,27 +57,30 @@ export default function LandingPage() {
               </h1>
 
               <p className="text-xl lg:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Unlock powerful insights from anonymized Instagram data.
-                Discover trends, analyze engagement patterns, and make
-                data-driven decisions with our comprehensive analytics platform.
+                Unlock deep insights from my personal Instagram DMs. Explore
+                trends, visualize engagement patterns, and—if you’ve ever
+                messaged me—discover your own stats and activity on this
+                interactive analytics platform.
               </p>
             </div>
           </div>
 
           {/* CTA Button */}
-          <div className="mb-16">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-            >
-              <span>Explore Data Insights</span>
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+          <div className="mb-16 flex justify-center">
+            <Link href="/search">
+              <Button
+                size="lg"
+                className="cursor-pointer bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform flex items-center"
+              >
+                <span>Enter Platform</span>
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
           </div>
 
           {/* Feature Cards */}
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-16">
-            <Card className="bg-white/70 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <Card className="bg-white/70 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <TrendingUp className="w-6 h-6 text-white" />
@@ -81,28 +89,31 @@ export default function LandingPage() {
                   Trend Analysis
                 </h3>
                 <p className="text-gray-600">
-                  Identify emerging trends and patterns in Instagram content and
-                  engagement metrics.
+                  Identify emerging trends and patterns in direct message
+                  conversations and gain valuable insights.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white/70 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <Card
+              className="bg-white/70 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform
+            "
+            >
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-6 h-6 text-white" />
+                  <Lock className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-gray-800">
-                  Audience Insights
+                  Privacy
                 </h3>
                 <p className="text-gray-600">
-                  Understand audience behavior and demographics through
-                  comprehensive data analysis.
+                  Usernames are anonymized and only non-sensitive insights are
+                  shown—your privacy and conversation details stay protected.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white/70 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <Card className="bg-white/70 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Eye className="w-6 h-6 text-white" />
@@ -121,32 +132,32 @@ export default function LandingPage() {
           {/* Stats Section */}
           <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 mb-16">
             <h2 className="text-3xl font-bold text-gray-800 mb-8">
-              Trusted by Data Enthusiasts
+              Data at a glance
             </h2>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">
-                  10M+
+                  280K+
                 </div>
-                <div className="text-gray-600">Data Points Analyzed</div>
+                <div className="text-gray-600">Messages Analyzed</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-2">
-                  500K+
+                  80+
                 </div>
-                <div className="text-gray-600">Posts Processed</div>
+                <div className="text-gray-600">Conversations Processed</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-cyan-600 to-purple-600 bg-clip-text text-transparent mb-2">
-                  99.9%
+                  3M+
                 </div>
-                <div className="text-gray-600">Anonymization Rate</div>
+                <div className="text-gray-600">Data Points</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
-                  24/7
+                  99%
                 </div>
-                <div className="text-gray-600">Real-time Updates</div>
+                <div className="text-gray-600">Anonymization Rate</div>
               </div>
             </div>
           </div>
@@ -161,7 +172,7 @@ export default function LandingPage() {
                 Lightning Fast
               </h3>
               <p className="text-gray-600">
-                Get instant insights with our optimized data processing engine.
+                Get instant insights with an optimized data processing engine.
               </p>
             </div>
 
@@ -182,10 +193,11 @@ export default function LandingPage() {
                 <Clock className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2 text-gray-800">
-                Real-time Data
+                Timely Updates
               </h3>
               <p className="text-gray-600">
-                Access the latest trends and insights as they happen.
+                New data is processed regularly to keep insights fresh and
+                relevant.
               </p>
             </div>
           </div>
@@ -196,17 +208,24 @@ export default function LandingPage() {
               Ready to Dive Into the Data?
             </h2>
             <p className="text-xl mb-6 opacity-90">
-              Start exploring comprehensive Instagram analytics and discover
-              insights that matter.
+              Start exploring comprehensive Instagram DM analytics and discover
+              insights that matter. Please note only data from May 1, 2024 to
+              May 1, 2025 is available for analysis.
             </p>
-            <Button
-              size="lg"
-              variant="secondary"
-              className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <span>Get Started Now</span>
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <div className="flex justify-center">
+              <Link href="/search">
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="cursor-pointer bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center"
+                >
+                  <span className="flex items-center">
+                    Enter Platform
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </span>
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </main>
